@@ -1,1 +1,0 @@
-module.exports = { url: "mongodb+srv://ardikaas:HpP8rOYtumNVlbvK@cluster0.zurzc6w.mongodb.net/?retryWrites=true&w=majority" }
