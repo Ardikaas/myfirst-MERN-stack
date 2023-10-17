@@ -1,12 +1,14 @@
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom'
 import Landing from './pages/Landing';
 import Notfound from './pages/Notfound';
+import Election from './pages/Election';
 
 function App() {
   return (
     <Router>
       <Routes>
         <Route path='/' element={<Landing />} />
+        <Route path='/paslon' element={<Election />} />
         <Route path='*' element={<Notfound />} />
       </Routes>
     </Router>

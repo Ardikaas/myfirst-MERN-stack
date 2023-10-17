@@ -28,7 +28,7 @@ body{
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  background-color: var(--blue);
+  background-color: var(--white);
   padding: 13px;
   padding-right: 70px;
   padding-left: 70px;
@@ -41,8 +41,6 @@ body{
 }
 .navbar-img img{
   width: 50px;
-  background-color: black;
-  border-radius: 50%;
 }
 .navbar-link{
   display: flex;
@@ -53,7 +51,7 @@ body{
 .navbar-link a{
   text-decoration: none;
   font-weight: 600;
-  color: var(--white);
+  color: var(--blue);
   transition: 0.3s;
 }
 .navbar-link a:hover{
@@ -65,6 +63,42 @@ body{
   height: 100vh;
   padding-top: 100px;
 }
+
+/* election */
+.con-election{
+  
+}
+.election{
+  padding: 30px;
+  /* padding-top: 50px; */
+  /* margin-top: 50px; */
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 20px;
+}
+.election-card{
+  background-color: var(--softgrey);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  padding: 20px;
+  border-radius: 10px;
+}
+.election-card img{
+  width: 150px;
+}
+.election-card h1{
+  font-size: 1rem;
+  margin: 0;
+}
+.election-card button{
+  width: 150px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
 
 /* footer */
 .footer {

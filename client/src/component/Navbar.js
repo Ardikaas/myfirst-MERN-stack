@@ -1,4 +1,4 @@
-import img from "./assets/Ardikaas.png"
+import img from "./assets/logopolban.png"
 const Navbar = () => {
   return(
     <div class="navbar">
