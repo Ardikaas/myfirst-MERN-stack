@@ -1,46 +1,33 @@
-const express = require('express');
-const mongose = require('mongoose');
-require('dotenv').config();
+const express = require("express");
+const mongoose = require("mongoose");
+const bodyParser = require("body-parser");
+require("dotenv").config();
+const UserController = require("./controller/userConroller");
 
+const uri = process.env.URI;
 const app = express();
-const db = module.exports = () => {
-  const conParam = {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  }
-  try{
-    mongose.connect(`mongodb+srv://${process.env.USER_NAME}:${process.env.PASS}@cluster0.inaynyz.mongodb.net/?retryWrites=true&w=majority`, conParam)
-    console.log('Database connected succesfully')
-  }catch(err){
-    console.log(err)
-    console.log('Database connection failed')
-  }
-}
+const port = process.env.PORT;
 
-db();
+mongoose
+  .connect(uri, {})
+  .then((result) => console.log("database connected succesfully"))
+  .catch((err) => console.log(err));
 
-app.use(express.json());
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
 
-const port = 8080;
+app.get("/api", async (req, res) => {
+  res.send("hai ngapain kesini :)");
+});
 
-app.get('/', (req, res) =>{
-  const mahasiswa = [
-    {
-      nama: 'ardika',
-      kelas: 'B',
-    },
-    {
-      nama: 'ucok',
-      kelas: 'A',
-    },
-    {
-      nama: 'udin',
-      kelas: 'B',
-    }
-  ]
-  res.send(mahasiswa)
-})
+app.get("/api/user", async (req, res) => {
+  UserController.getAllUsers(req, res);
+});
+
+app.post("/api/user/register", async (req, res) => {
+  UserController.createUser(req, res);
+});
 
 app.listen(port, () => {
-  console.log(`app listening at port http://localhost:${port}`)
-})
+  console.log(`app listening at port http://localhost:${port}`);
+});

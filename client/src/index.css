@@ -61,12 +61,19 @@ body{
 /* home */
 .home{
   height: 100vh;
-  padding-top: 100px;
+  visibility: hidden;
+  /* padding-top: 100px; */
 }
 
 /* election */
 .con-election{
-  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.tit-election{
+  padding-top: 50px;
 }
 .election{
   padding: 30px;
